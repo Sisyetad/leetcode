@@ -1,12 +1,11 @@
 class Solution:
     def removeDuplicates(self,nums) :
-        dict={}
-        for i in nums:
-            if i in dict:
-                dict[i]+=1
+        x=0
+        n=len(nums)
+        for i in range(n):
+            if(nums[x]==nums[i]):
+                nums[x]=nums[i]
             else:
-                dict[i]=1
-        nums.clear()
-        for i in dict:
-                nums.append(i)
-        return len(nums)
+                x+=1
+                nums[x]=nums[i]
+        return x+1
